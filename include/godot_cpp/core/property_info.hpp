@@ -45,22 +45,11 @@ namespace godot {
 
 struct PropertyInfo {
 	Variant::Type type = Variant::NIL;
-	const char *name = nullptr;
-	const char *class_name = nullptr;
+	String name;
+	String class_name;
 	uint32_t hint = 0;
-	const char *hint_string = nullptr;
+	String hint_string;
 	uint32_t usage = 7;
-
-	operator GDNativePropertyInfo() const {
-		GDNativePropertyInfo info;
-		info.type = type;
-		info.name = name;
-		info.hint = hint;
-		info.hint_string = hint_string;
-		info.class_name = class_name;
-		info.usage = usage;
-		return info;
-	}
 
 	PropertyInfo() = default;
 
